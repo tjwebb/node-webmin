@@ -4,9 +4,10 @@
   "description": "Webmin is a web-based interface for system administration for Unix.",
   "main": "index.js",
   "scripts": {
-    "deploy": "sudo -E WEBMIN_USER=admin WEBMIN_PASSWORD=admin node install.js",
-    "start": "sudo etc/start",
-    "stop": "sudo etc/stop"
+    "setup": "sudo -E WEBMIN_USER=admin WEBMIN_PASSWORD=admin node install.js",
+    "start": "sudo ./etc/start",
+    "stop": "sudo ./etc/stop",
+    "preuninstall": "sudo ./etc/uninstall.sh"
   },
   "repository": {
     "type": "git",
