@@ -37,13 +37,13 @@ function onExtracted (err) {
   console.log('webmin: Installing...');
   var setup = spawn(path.resolve(dist, pkg, 'setup.sh'), [ opt ], {
     env: {
-      config_dir: path.resolve(__dirname, 'etc'),
-      var_dir: path.resolve(__dirname, 'log'),
+      config_dir: '/etc/webmin',
+      var_dir: path.resolve('/var/log/webmin'),
       perl: '/usr/bin/perl',
       port: 10000,
-      login: process.env.WEBMIN_USER,
-      password: process.env.WEBMIN_PASSWORD,
-      password2: process.env.WEBMIN_PASSWORD,
+      login: process.env.WEBMIN_USER || 'admin',
+      password: process.env.WEBMIN_PASSWORD || 'admin',
+      password2: process.env.WEBMIN_PASSWORD || 'admin',
       ssl: 0,
       atboot: 1
     }
