@@ -6,8 +6,7 @@
   "scripts": {
     "setup": "sudo -E WEBMIN_USER=admin WEBMIN_PASSWORD=admin node install.js",
     "start": "sudo ./etc/start",
-    "stop": "sudo ./etc/stop",
-    "preuninstall": "sudo ./etc/uninstall.sh"
+    "stop": "sudo ./etc/stop"
   },
   "repository": {
     "type": "git",

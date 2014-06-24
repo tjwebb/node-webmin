@@ -12,13 +12,11 @@ var dist = path.resolve(__dirname, 'dist');
 var opt = path.resolve(__dirname, 'opt');
 var tarball = path.resolve(__dirname, pkg + '.tgz');
 
-rimraf.sync(dist);
-
 if (fs.existsSync(tarball)) {
   onDownloaded();
 }
 else {
-  console.log('Downloading webmin ...');
+  console.log('webmin: Downloading...');
   request(url).pipe(
     fs.createWriteStream(tarball)
       .on('finish', onDownloaded)
@@ -44,18 +42,20 @@ function onExtracted (err) {
       var_dir: path.resolve(__dirname, 'log'),
       perl: '/usr/bin/perl',
       port: 10000,
-      login: 'admin',
-      password: 'webmin',
-      password2: 'webmin',
+      login: process.env.WEBMIN_USER,
+      password: process.env.WEBMIN_PASSWORD,
+      password2: process.env.WEBMIN_PASSWORD,
       ssl: 0,
       atboot: 1
     }
   });
   setup.stdout.on('data', function (data) {
-    console.log('setup.sh: ' + data);
+    console.log(('setup.sh: ' + data).trim());
   });
   setup.on('error', onError);
   setup.on('exit', function (err) {
+    rimraf.sync(dist);
+    rimraf.sync(tarball);
     process.exit(0);
   });
 }
