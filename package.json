@@ -1,0 +1,39 @@
+{
+  "name": "webmin",
+  "version": "1.69.0",
+  "description": "Webmin is a web-based interface for system administration for Unix.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sudo -E WEBMIN_USER=admin WEBMIN_PASSWORD=admin node install.js",
+    "start": "sudo etc/start",
+    "stop": "sudo etc/stop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tjwebb/node-webmin.git"
+  },
+  "files": [
+    "README.md",
+    "install.js"
+  ],
+  "bin": {
+    "install": "install.js"
+  },
+  "keywords": [
+    "webmin",
+    "sysadmin",
+    "control",
+    "panel"
+  ],
+  "author": "Travis Webb <me@traviswebb.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/tjwebb/node-webmin/issues"
+  },
+  "homepage": "https://github.com/tjwebb/node-webmin",
+  "dependencies": {
+    "request": "^2.36.0",
+    "rimraf": "^2.2.8",
+    "tar.gz": "^0.1.1"
+  }
+}
