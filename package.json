@@ -1,6 +1,6 @@
 {
   "name": "webmin",
-  "version": "1.69.0-r2",
+  "version": "1.69.0-r3",
   "description": "Webmin is a web-based interface for system administration for Unix.",
   "main": "index.js",
   "scripts": {
