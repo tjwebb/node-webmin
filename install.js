@@ -13,16 +13,15 @@ var opt = path.resolve(__dirname, 'opt');
 var tarball = path.resolve(__dirname, pkg + '.tgz');
 
 if (fs.existsSync(tarball)) {
-  onDownloaded();
+  fs.unlinkSync(tarball);
 }
-else {
-  console.log('webmin: Downloading...');
-  request(url).pipe(
-    fs.createWriteStream(tarball)
-      .on('finish', onDownloaded)
-      .on('error', onError)
-    );
-}
+
+console.log('webmin: Downloading...');
+request(url).pipe(
+  fs.createWriteStream(tarball)
+    .on('finish', onDownloaded)
+    .on('error', onError)
+  );
 
 function parseVersion (version) {
   var split = version.replace(/\-r[0-9]+$/, '').split('.');
