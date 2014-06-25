@@ -1,6 +1,6 @@
 {
   "name": "webmin",
-  "version": "1.6.90-r3",
+  "version": "1.6.90-r5",
   "description": "Webmin is a web-based interface for system administration for Unix.",
   "main": "index.js",
   "repository": {
@@ -8,10 +8,8 @@
     "url": "git://github.com/tjwebb/node-webmin.git"
   },
   "slug": {
-    "org": "webmin",
-    "name": "webmin",
-    "url": "https://github.com/webmin/webmin/",
-    "tag": "e7db702"
+    "tag": "1.690",
+    "url": "http://prdownloads.sourceforge.net/webadmin/webmin-1.690.tar.gz"
   },
   "bin": {
     "webmin": "index.js"
@@ -20,6 +18,7 @@
   "keywords": [
     "xmin",
     "webmin",
+    "usermin",
     "sysadmin",
     "control",
     "panel"

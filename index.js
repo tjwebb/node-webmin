@@ -1,2 +1,2 @@
 require('xmin')
-  .create(process.cwd(), require('./package'));
+  .create(__dirname, require('./package'));
