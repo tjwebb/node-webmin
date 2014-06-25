@@ -1,11 +1,12 @@
 node-webmin
 ===========
 
-Install and manage webmin from your node project. Versioned in step with Webmin.
+Install and manage Webmin from your node project. Versioned in step with Webmin.
 
 ```bash
 $ npm install -g webmin
-$ sudo npm run setup
+$ webmin install --user admin --password pass123
 ```
 - npm package: <https://www.npmjs.org/package/webmin>
-- webmin site: <http://www.webmin.com/>
+
+### For more info on CLI usage, see: https://www.npmjs.org/package/xmin
