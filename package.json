@@ -3,12 +3,6 @@
   "version": "1.6.90-r1",
   "description": "Webmin is a web-based interface for system administration for Unix.",
   "main": "index.js",
-  "scripts": {
-    "setup": "node install.js",
-    "start": "/etc/start",
-    "stop": "/etc/stop",
-    "uninstall": "/etc/uninstall.sh"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/tjwebb/node-webmin.git"
