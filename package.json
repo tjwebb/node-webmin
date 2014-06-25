@@ -1,26 +1,30 @@
 {
   "name": "webmin",
-  "version": "1.69.0-r3",
+  "version": "1.6.90-r1",
   "description": "Webmin is a web-based interface for system administration for Unix.",
   "main": "index.js",
   "scripts": {
     "setup": "node install.js",
-    "start": "./etc/start",
-    "stop": "./etc/stop",
-    "uninstall": "./etc/uninstall.sh"
+    "start": "/etc/start",
+    "stop": "/etc/stop",
+    "uninstall": "/etc/uninstall.sh"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/tjwebb/node-webmin.git"
   },
-  "files": [
-    "README.md",
-    "install.js"
-  ],
-  "bin": {
-    "install": "install.js"
+  "slug": {
+    "org": "webmin",
+    "name": "webmin",
+    "url": "https://github.com/webmin/webmin/",
+    "tag": "e7db702"
   },
+  "bin": {
+    "webmin": "index.js"
+  },
+  "preferGlobal": true,
   "keywords": [
+    "xmin",
     "webmin",
     "sysadmin",
     "control",
@@ -33,8 +37,6 @@
   },
   "homepage": "https://github.com/tjwebb/node-webmin",
   "dependencies": {
-    "request": "^2.36.0",
-    "rimraf": "^2.2.8",
-    "tar.gz": "^0.1.1"
+    "xmin": "^0.9.0"
   }
 }
